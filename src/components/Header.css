@@ -1,0 +1,26 @@
+#home{
+    margin-left: 100px;
+}
+
+#store{
+    margin-left: 60px;
+}
+
+#about{
+    margin-right: 60px;
+}
+
+#sound{
+    margin-right: 100px;
+}
+
+.link{
+    text-decoration: none;
+
+    color:#FFFFFF;
+    font-family: Pretendard;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}

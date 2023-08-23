@@ -1,11 +1,26 @@
+import { Reset } from 'styled-reset';
 import logo from './logo.svg';
+import MainPage from './pages/MainPage';
 // import './App.css';
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import StorePage from './pages/StorePage';
+import AboutPage from './pages/AboutPage';
+import GalleryPage from './pages/GalleryPage';
+import AudioPage from './pages/AudioPage';
+import PosterPage from './pages/PosterPage';
 
 function App() {
   return (
-   <div>
-    <h1>Hello World</h1>
-   </div>
+    <BrowserRouter>
+     <Routes>
+      <Route path="/" element={<MainPage/>}/>
+      <Route path="/store" element={<StorePage/>}/>
+      <Route path="/about" element={<AboutPage/>}/>
+      <Route path="/gallery" element={<GalleryPage/>}/>
+      <Route path="/audio" element={<AudioPage/>}/>
+      <Route path="/poster" element={<PosterPage/>}/>
+     </Routes>
+    </BrowserRouter>
   );
 }
 
