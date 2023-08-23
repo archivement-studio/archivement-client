@@ -1,5 +1,6 @@
 import { styled } from "styled-components"
 import './Header.css'
+import { Link } from "react-router-dom";
 const archivementLogo = "/assets/images/archivement-logo.png";
 
 const StyledHeader = styled.div`
@@ -45,19 +46,19 @@ const StyleHeaderLogo = styled.img`
     flex-shrink: 0;
 `
 
-export default function Headeer(){
+export default function Header(){
 
     return (
         <StyledHeader>
             <StyleHeaderMenuLeftItem>
-                <div id="home">HOME</div>
-                <div id="store">STORE</div>
+                <div id="home"><Link className="link" to="/">HOME</Link></div>
+                <div id="store"><Link className="link" to="/store">STORE</Link></div>
             </StyleHeaderMenuLeftItem>
             <StyleHeaderMenuCenterItem>
                 <StyleHeaderLogo src={archivementLogo}/>
             </StyleHeaderMenuCenterItem>
             <StyleHeaderMenuRightItem>
-                <div id="about">ABOUT</div>
+                <div id="about"><Link className="link" to="/about">ABOUT</Link></div>
                 <div id="sound">SOUND OFF</div>
             </StyleHeaderMenuRightItem>
         </StyledHeader>
