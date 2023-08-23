@@ -4,7 +4,13 @@ import MainPageBody from "../components/MainPage/MainPageBody";
 
 const StyleMainPage = styled.div`
     background-image: url("/assets/images/main-page-background.png");
-    height: 1080px;
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
 `
 
 export default function MainPage(){

@@ -23,7 +23,6 @@ const StyleArchivementIcon = styled.img`
     margin: 0px auto;
     flex-shrink: 0;
     width: 119px;
-    text
 `
 
 export default function MainPageBody(){
