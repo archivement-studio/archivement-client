@@ -61,7 +61,7 @@ export default function Header(){
             </StyleHeaderMenuCenterItem>
             <StyleHeaderMenuRightItem>
                 <div id="about"><Link className="link" to="/about">ABOUT</Link></div>
-                <div id="sound">SOUND OFF</div>
+                <div id="sound">SOUND_OFF</div>
             </StyleHeaderMenuRightItem>
         </StyledHeader>
     )
