@@ -1,5 +1,6 @@
 import { styled } from "styled-components";
 import './AboutPageBody.css'
+import HoverButton from "../HoverButton";
 
 const StyledAboutPageBody = styled.div`
     // display: flex;
@@ -27,6 +28,10 @@ const StyleArchivementLogo = styled.img`
     margin-bottom: 208px;
 `
 
+const StyleAboutHoverButton = styled.div`
+    margin-bottom: 272px;
+`   
+
 const archivementLogo = "/assets/images/archivement-logo.svg";
 
 const aboutImage = "/assets/meta/about-meta.png";
@@ -39,6 +44,9 @@ export default function AboutPageBody(){
                 <h1 id="about-intro-title">ABOUT</h1>
                 <StyleArchivementLogo src={archivementLogo}/>
             </StyledAboutPageBodyIntro>
+            <StyleAboutHoverButton>
+                <HoverButton button_label={"Select"}/>
+            </StyleAboutHoverButton>
         </StyledAboutPageBody>
     );
 }

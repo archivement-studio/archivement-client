@@ -25,3 +25,6 @@ yarn-error.log*
 
 # meta
 public/assets/meta/
+
+# test_component
+src/test_component/

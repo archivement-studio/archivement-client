@@ -1,0 +1,60 @@
+.button-border{
+    
+}
+
+.hover-button{
+    width: min(80vw,170px);
+    height: 44px;
+    box-sizing: border-box;
+    position: relative;
+    /* background: rgba(133, 133, 133, 0.20); */
+    color: #ffffff;
+
+
+    border: 1px solid transparent;
+    border-radius: 70px;
+    /* background-image:linear-gradient(rgba(27,27,27,100), rgba(27,27,27,100)), linear-gradient(180deg, #A3A3A3 0%, #484848 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box; */
+    /* background: linear-gradient(to right, red, purple); */
+    padding: 1px;
+
+
+
+    /* float: left; */
+    margin: 0 auto;
+    margin-bottom: 5px;
+    
+}
+
+.hover-button>div{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    line-height: 25px;
+    transition: .5s ease;
+    border-radius: 70px;
+    font-size: min(5vw,16px);
+    font-weight: 500;
+
+    background: rgba(133, 133, 133, 0.2);
+    /* backdrop-filter: blur(7.5px); */
+}
+  
+.hover-button input {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+    margin: 0px;
+}
+
+.hover-button input[type=button]:hover ~ div {
+    background: rgba(255, 255, 255, 0.40);
+    color: #ffffff;
+}
