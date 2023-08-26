@@ -1,6 +1,7 @@
 import { styled } from "styled-components";
 import PosterPageNav from "./PosterPageNav";
 import PosterPageUsername from "./PosterPageUsername";
+import PosterPageLoading from "./PosterPageLoading";
 
 const StylePosterImage = styled.img`
     display: flex;
@@ -25,9 +26,12 @@ export default function PosterPageBody(){
             {/* <StylePosterImage src={posterImage}/> */}
 
             {/* poster 페이지: step2 */}
-            <StylePosterUsernameDiv>
+            {/* <StylePosterUsernameDiv>
                 <PosterPageUsername/>
-            </StylePosterUsernameDiv>
+            </StylePosterUsernameDiv> */}
+
+            {/* poster 페이지 step2, loadding */}
+            <PosterPageLoading/>
         </div>
     );
 }

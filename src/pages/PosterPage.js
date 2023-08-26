@@ -4,8 +4,14 @@ import PosterPageBody from "../components/PosterPage/PosterPageBody";
 import HoverButton from "../components/HoverButton";
 import TestButton from "../test_component/TestButton";
 
+import "../components/PosterPage/PosterPageResult.css"
+
 const StylePosterPage = styled.div`
-    background: linear-gradient(180deg, rgba(168, 168, 168, 0.20) 12.26%, rgba(0, 0, 0, 0.00) 100%), #000;
+    // background: linear-gradient(180deg, rgba(168, 168, 168, 0.20) 12.26%, rgba(0, 0, 0, 0.00) 100%), #000;
+    
+    background-image: url("/assets/meta/poster-meta.png");
+
+
     content: "";
     // position: fixed;
     top: 0;
@@ -21,7 +27,7 @@ margin-top: 73px;
 
 export default function PosterPage(){
     return (
-        <StylePosterPage>
+        <StylePosterPage id="poster">
             <Header/>
             <PosterPageBody/>
             <StylePosterHoverButton>
