@@ -16,6 +16,8 @@ const StyledHeader = styled.div`
 
     background: rgba(0, 0, 0, 0.40);
     backdrop-filter: blur(6px);
+    
+    border-bottom: 1px solid;
 `
 
 const StyleHeaderMenuLeftItem = styled.div`
@@ -52,14 +54,14 @@ export default function Header(){
         <StyledHeader>
             <StyleHeaderMenuLeftItem>
                 <div id="home"><Link className="link" to="/">HOME</Link></div>
-                <div id="store"><Link className="link" to="/store">STORE</Link></div>
+                <div id="store"><a className="link" href="https://smartstore.naver.com/givven">STORE</a></div>
             </StyleHeaderMenuLeftItem>
             <StyleHeaderMenuCenterItem>
-                <StyleHeaderLogo src={archivementLogo}/>
+                <Link className="link" to="/"><StyleHeaderLogo src={archivementLogo}/></Link>
             </StyleHeaderMenuCenterItem>
             <StyleHeaderMenuRightItem>
                 <div id="about"><Link className="link" to="/about">ABOUT</Link></div>
-                <div id="sound">SOUND OFF</div>
+                <div id="sound">SOUND_OFF</div>
             </StyleHeaderMenuRightItem>
         </StyledHeader>
     )

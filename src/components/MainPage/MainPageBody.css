@@ -1,0 +1,5 @@
+.hover-button{
+    background-image:linear-gradient(rgba(133, 133, 133, 0.20), rgba(133, 133, 133, 0.20)), linear-gradient(180deg, #A3A3A3 0%, #484848 100%);
+    background-origin: border-box;
+    background-clip: content-box, border-box;
+}

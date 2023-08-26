@@ -1,0 +1,5 @@
+
+.username:focus {
+    outline: none;
+    color: white;
+}
