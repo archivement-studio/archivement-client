@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 import Header from "../components/Header";
 import PosterPageBody from "../components/PosterPage/PosterPageBody";
 import HoverButton from "../components/HoverButton";
-import TestButton from "../test_component/TestButton";
+// import TestButton from "../test_component/TestButton";
 
 import "../components/PosterPage/PosterPageResult.css"
 
