@@ -18,6 +18,11 @@ const StyledHeader = styled.div`
     backdrop-filter: blur(6px);
     
     border-bottom: 1px solid;
+
+    position: fixed;
+    width: 100%;
+
+    z-index: 5;
 `
 
 const StyleHeaderMenuLeftItem = styled.div`

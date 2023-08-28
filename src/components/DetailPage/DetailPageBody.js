@@ -16,7 +16,6 @@ export default function DetailPageBody(){
     return (
         <StyleDetailPageBody>
             <Header/>
-            <h1>DetailPage</h1>
         </StyleDetailPageBody>
     );
 }

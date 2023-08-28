@@ -1,10 +1,11 @@
+import GalleryPageCanvas from "../components/GalleyPage/GalleryPageCanvas";
 import Header from "../components/Header";
 
 export default function GalleryPage(){
     return (
-        <div>
+        <div id="gallery">
             <Header/>
-            <h1>GalleryPage</h1>
+            <GalleryPageCanvas/>
         </div>
     );
 }
