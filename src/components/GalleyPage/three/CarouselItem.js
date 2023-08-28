@@ -2,6 +2,8 @@ import { useEffect, useRef, useState } from 'react'
 import { useThree } from '@react-three/fiber'
 import gsap from 'gsap'
 import Plane from './Plane'
+import { useRecoilState } from 'recoil'
+import GalleryPageImageAtom from '../../../state/GalleryPageImageAtom'
 
 const CarouselItem = ({
   index,
@@ -17,6 +19,13 @@ const CarouselItem = ({
   const [isCloseActive, setCloseActive] = useState(false)
   const { viewport } = useThree()
   const timeoutID = useRef()
+
+  const [galleryImage, setGelleryImage] = useRecoilState(GalleryPageImageAtom);
+
+  useEffect(() => {
+    setGelleryImage(null);
+  },[])
+
 
   useEffect(() => {
     if (activePlane === index) {
@@ -51,6 +60,7 @@ const CarouselItem = ({
   }, [hover, isActive])
 
   const handleClose = (e) => {
+    setGelleryImage(null);
     e.stopPropagation()
     if (!isActive) return
     setActivePlane(null)
@@ -65,7 +75,8 @@ const CarouselItem = ({
     <group
       ref={$root}
       onClick={() => {
-        setActivePlane(index)
+        setActivePlane(index);
+        setGelleryImage(item);
       }}
       onPointerEnter={() => setHover(true)}
       onPointerLeave={() => setHover(false)}
