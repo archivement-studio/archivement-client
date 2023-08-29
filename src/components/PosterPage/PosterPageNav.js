@@ -1,5 +1,7 @@
 import { styled } from "styled-components";
 import "./PosterPageNav.css"
+import PosterPageAtom from "../../state/PosterPageAtom";
+import { useRecoilState } from "recoil";
 
 const StyledPosterNav = styled.div`
     display: flex;
@@ -24,6 +26,8 @@ const StyledNavLeftItem = styled.div`
     justify-content: left;
     margin-right: 39px;
     width: 50px;
+
+    cursor: pointer;
 `;
 
 const StyledNavCenterItem = styled.div`
@@ -33,6 +37,8 @@ const StyledNavCenterItem = styled.div`
     font-weight: 500;
     line-height: 150%; /* 42px */
     letter-spacing: -0.168px;
+
+    height: 43px;
 `;
 
 const StyledNavRgithItem = styled.div`
@@ -40,22 +46,46 @@ const StyledNavRgithItem = styled.div`
     justify-content: right;
     margin-left: 39px;
     width: 50px;
+
+    cursor: pointer;
 `;
 
 const poster_left_nav = "/assets/icons/poster-left-nav.svg";
 const poster_right_nav = "/assets/icons/poster-right-nav.svg";
 
 export default function PosterPageNav(){
+    const [posterState,setPosterState] = useRecoilState(PosterPageAtom);
+
+    function onLeftButton(){
+        let posterStateTemp = { ...posterState };
+        let step = posterStateTemp['step'];
+        if(step !== 0){
+            posterStateTemp['step'] = posterStateTemp['step'] - 1; 
+        }
+
+        setPosterState(posterStateTemp)
+    }
+
+    async function onRightButton(){
+        let posterStateTemp = { ...posterState };
+        let step = posterStateTemp['step'];
+        if(step !== 3){
+            posterStateTemp['step'] = posterStateTemp['step'] + 1; 
+        }
+
+        setPosterState(posterStateTemp)
+    }
+
     return (
         <StyledPosterNav id="poster-nav">
             <StyledNavLeftItem>
-                <img src={poster_left_nav}/> 
+                <img src={poster_left_nav} onClick={onLeftButton}/> 
             </StyledNavLeftItem>
             <StyledNavCenterItem>
-                <div>사이드바를 옮겨 포스터를 제작해보세요.</div>
+                <div>{posterState.titles[posterState['step']]}</div>
             </StyledNavCenterItem>
             <StyledNavRgithItem>
-                <img src={poster_right_nav}/> 
+                <img src={poster_right_nav} onClick={onRightButton}/> 
             </StyledNavRgithItem>
         </StyledPosterNav>
     );
