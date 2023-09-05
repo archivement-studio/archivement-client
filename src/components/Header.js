@@ -1,6 +1,8 @@
 import { styled } from "styled-components"
 import './Header.css'
 import { Link } from "react-router-dom";
+import { useRecoilState } from "recoil";
+import SoundStateAtom from "../state/SoundStateAtom";
 const archivementLogo = "/assets/images/archivement-logo.png";
 
 const StyledHeader = styled.div`
@@ -54,6 +56,13 @@ const StyleHeaderLogo = styled.img`
 `
 
 export default function Header(){
+    const [soundState,setSoundState] = useRecoilState(SoundStateAtom);
+
+    function onCLickSoundNav(){
+        let soundStateTemp = { ...soundState };
+        soundStateTemp['sound_state'] = !soundStateTemp['sound_state'];
+        setSoundState(soundStateTemp);
+    }
 
     return (
         <StyledHeader>
@@ -66,7 +75,7 @@ export default function Header(){
             </StyleHeaderMenuCenterItem>
             <StyleHeaderMenuRightItem>
                 <div id="about"><Link className="link" to="/about">ABOUT</Link></div>
-                <div id="sound">SOUND_OFF</div>
+                <div id="sound" onClick={onCLickSoundNav}>{soundState['sound_title'][[soundState['sound_state']]]}</div>
             </StyleHeaderMenuRightItem>
         </StyledHeader>
     )
