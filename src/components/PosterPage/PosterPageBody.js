@@ -2,12 +2,13 @@ import { styled } from "styled-components";
 import PosterPageNav from "./PosterPageNav";
 import PosterPageUsername from "./PosterPageUsername";
 import PosterPageLoading from "./PosterPageLoading";
-import { useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRecoilState } from "recoil";
 import PosterPageAtom from "../../state/PosterPageAtom";
 import HoverButton from "../HoverButton";
 import ModalOverlay from "../ModalOverlay";
 import { Navigate } from "react-router-dom";
+import PosterPageLinebar from "./PosterPageLinebar";
 
 const StylePosterImage = styled.img`
     display: flex;
@@ -28,6 +29,12 @@ const StylePosterHoverButton = styled.div`
     margin-top: 73px;
 `   
 
+const StylePosterLineBar = styled.div`
+    display: block;
+    cursor: pointer;
+`
+
+
 const posterImage = "/assets/meta/about-meta.png";
 
 export default function PosterPageBody(){
@@ -42,7 +49,13 @@ export default function PosterPageBody(){
 
         setPosterState(posterStateTemp)
     }
-    
+
+    function movePosterLinebar(event){
+        console.log("ㅋㅋㅋㅋㅋㅋ",event);
+        console.log(event.pageX, event.pageY);
+    }
+
+    const posterImageRef = useRef(null);
 
     useEffect(()=>{
         setPosterState({'step':0,'titles':["사이드바를 옮겨 포스터를 제작해보세요.","",""]})
@@ -53,7 +66,10 @@ export default function PosterPageBody(){
         pageBody = 
         <div>
             <PosterPageNav/>
-            <StylePosterImage src={posterImage}/>
+            <StylePosterLineBar>
+                <PosterPageLinebar/>
+            </StylePosterLineBar>
+            <StylePosterImage src={posterImage} ref={posterImageRef} id="poster-image"/>
             <StylePosterHoverButton>
                 <HoverButton button_label={"Next"} onclick={buttonClickEvent}/>
             </StylePosterHoverButton>
