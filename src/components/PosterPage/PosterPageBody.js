@@ -58,7 +58,7 @@ export default function PosterPageBody(){
     const posterImageRef = useRef(null);
 
     useEffect(()=>{
-        setPosterState({'step':0,'titles':["사이드바를 옮겨 포스터를 제작해보세요.","",""]})
+        setPosterState({'step':0,'titles':["사이드바를 옮겨 포스터를 제작해보세요.","",""],"line_xpos":485})
     },[])
 
     let pageBody;

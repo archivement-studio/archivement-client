@@ -2,6 +2,8 @@ import { Component, useEffect, useState } from "react";
 import Draggable from "react-draggable";
 import { styled } from "styled-components";
 import "./PosterPageLinebar.css"
+import { useRecoilState } from "recoil";
+import PosterPageAtom from "../../state/PosterPageAtom";
 
 // export default function PosterPageLinebar(){
 //   return (
@@ -45,6 +47,7 @@ export default function PosterLinebar(){
   const [controlledPosition,setControlledPosition] = useState({
     x: 500, y: 200
   })
+  const [posterState,setPosterState] = useRecoilState(PosterPageAtom);
 
   const handleDrag = (e, ui) => {
     const {x, y} = deltaPosition;
@@ -113,20 +116,29 @@ export default function PosterLinebar(){
   const handleSize = () => {
     const width = Number(window.getComputedStyle(document.getElementById("poster-image")).width.split('px')[0]);
     const xpos = Number(window.getComputedStyle(document.getElementById("poster-image")).marginLeft.split('px')[0]);
-    const position = (xpos+width/2)+"px";
-    setLineXPos(position);
+    const position = (xpos+width/2);
+    setLineXPos(position+"px");
   };
 
   useEffect(()=>{
     handleSize();
-  },[])
+  },[]);
 
   useEffect(()=>{
       window.addEventListener("resize", handleSize);
-  },[])
+  },[]);
+
+  function onDrag(e,data){
+    let position = 485 + Number(data['node'].style.webkitTransform.split("translate(")[2].split('px')[0]);
+
+    let posterTemp = {...posterState};
+    posterTemp['line_xpos'] = position;
+    setPosterState(posterTemp);
+    console.log(posterState);
+  }
 
   return(
-    <Draggable bounds={{left: -485, right: 485-6}} positionOffset={{x: lineXPos, y: '0%'}} axis="x" >
+    <Draggable bounds={{left: -485, right: 485-6}} positionOffset={{x: lineXPos, y: '0%'}} axis="x" onDrag={onDrag} >
       {/* <div id="linebar"/> */}
       <div>
         <LinebarTop src="/assets/images/linebar-top.svg"/>
