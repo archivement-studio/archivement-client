@@ -9,6 +9,7 @@ import HoverButton from "../HoverButton";
 import ModalOverlay from "../ModalOverlay";
 import { Navigate } from "react-router-dom";
 import PosterPageLinebar from "./PosterPageLinebar";
+import PosterPageResult from "./PosterPageResult";
 
 const StylePosterImage = styled.img`
     display: flex;
@@ -95,7 +96,10 @@ export default function PosterPageBody(){
         </div>;
     }
     else{
-        pageBody= <div><h1>Hello Result</h1></div>
+        pageBody= 
+        <div>
+            <PosterPageResult/>
+        </div>
     }
 
     async function onChange(){

@@ -114,10 +114,15 @@ export default function PosterLinebar(){
 
   
   const handleSize = () => {
-    const width = Number(window.getComputedStyle(document.getElementById("poster-image")).width.split('px')[0]);
-    const xpos = Number(window.getComputedStyle(document.getElementById("poster-image")).marginLeft.split('px')[0]);
-    const position = (xpos+width/2);
-    setLineXPos(position+"px");
+    try{
+      const width = Number(window.getComputedStyle(document.getElementById("poster-image")).width.split('px')[0]);
+      const xpos = Number(window.getComputedStyle(document.getElementById("poster-image")).marginLeft.split('px')[0]);
+      const position = (xpos+width/2);
+      setLineXPos(position+"px");
+    }
+    catch(e){
+      
+    }
   };
 
   useEffect(()=>{
