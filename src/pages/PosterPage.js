@@ -22,7 +22,7 @@ const StylePosterPage = styled.div`
 `
 
 const StylePosterHoverButton = styled.div`
-margin-top: 73px;
+    margin-top: 73px;
 `
 
 export default function PosterPage(){
