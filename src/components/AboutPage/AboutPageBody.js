@@ -4,7 +4,7 @@ import HoverButton from "../HoverButton";
 
 const StyledAboutPageBody = styled.div`
     // display: flex;
-    margin-top: 140px;
+    padding-top: 140px;
 `
 const StyleAboutImage = styled.img`
     display: flex;
