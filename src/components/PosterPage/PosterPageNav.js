@@ -9,7 +9,7 @@ const StyledPosterNav = styled.div`
 
     padding-right: 92px;
     padding-left: 92px;
-    padding-top: 78px;
+    padding-top: 176px;
     padding-bottom: 66px;
 
     color: #FFF;

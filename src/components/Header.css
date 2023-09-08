@@ -12,6 +12,13 @@
 
 #sound{
     margin-right: 100px;
+    cursor: pointer;
+    color: #FFFFFF;
+    width: 92px;
+}
+
+#sound:hover{
+    color: #000000;
 }
 
 .link{
