@@ -13,23 +13,30 @@ const StylePosterLoadingTitle = styled.div`
     margin-top: 67.5px;
 `
 
-const StylePosterLoading = styled.img`
+const StylePosterLoadingImage = styled.img`
     display: flex;
     margin: 0px auto;
     flex-shrink: 0;
     width: 273px;
     height: 273px;
 `
+const StylePosterLoading = styled.div`
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index:1;
+`
 
 
 const PosterLoading = "/assets/gif/loading.gif";
 export default function PosterPageLoading(){
     return (
-        <div>
-            <StylePosterLoading src={PosterLoading}/>
+        <StylePosterLoading>
+            <StylePosterLoadingImage src={PosterLoading}/>
             <StylePosterLoadingTitle>
                 포스터 제작 중입니다.
             </StylePosterLoadingTitle>
-        </div>
+        </StylePosterLoading>
     );
 }
