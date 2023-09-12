@@ -17,12 +17,17 @@ const StyleFooterLeftItem = styled.div`
 
 const StyleFooterRightItem = styled.div`
     text-align: right;
-    padding-top: 143px;
+    padding-top: 78px;
 `
 
 const StyleArchivementIcon = styled.img`
     width: 105px;
     margin-bottom: 22px;
+`
+
+const StyleArchivementLogo = styled.img`
+    padding-bottom: 28px;
+    width: 275px;
 `
 
 const archivementIcon = "/assets/icons/archivement-icon.png";
@@ -36,6 +41,7 @@ export default function Footer(){
                 <h1 className="footer-copyright">copyright. 2023 codecolony all right reserved.</h1>
             </StyleFooterLeftItem>
             <StyleFooterRightItem>
+                <StyleArchivementLogo src="/assets/images/archivement-logo.png"/>
                 <h1>codecolony@gmail.com</h1>
                 <h1>+82 010-2795-1240</h1>
             </StyleFooterRightItem>
