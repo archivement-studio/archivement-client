@@ -37,14 +37,14 @@ const StylePosterLineBar = styled.div`
 `
 
 
-const StylePosterHoverButton = styled.div`
-    margin-top: 50px;
-`   
+// const StylePosterHoverButton = styled.div`
+//     margin-top: 50px;
+// `   
 
-const StylePosterLineBar = styled.div`
-    display: block;
-    cursor: pointer;
-`
+// const StylePosterLineBar = styled.div`
+//     display: block;
+//     cursor: pointer;
+// `
 
 
 const posterImage = "/assets/images/gallery/13.jpg";

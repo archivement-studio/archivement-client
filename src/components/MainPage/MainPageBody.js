@@ -2,7 +2,7 @@ import { styled } from "styled-components";
 import HoverButton from "../HoverButton";
 import "./MainPageBody.css"
 import { useNavigate } from "react-router-dom";
-import ReactPlayer from 'react-player'
+// import ReactPlayer from 'react-player'
 
 const archivementIcon = "/assets/icons/archivement-icon.png";
 
