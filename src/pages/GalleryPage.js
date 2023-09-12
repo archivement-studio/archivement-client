@@ -34,6 +34,10 @@ const GallerySrcollDownText = styled.div`
     line-height: normal;
 `
 
+const StyledGalleryButton = styled.div`
+    margin-bottom: 50px;
+`
+
 export default function GalleryPage(){
     const [galleryImage, setGelleryImage] = useRecoilState(GalleryPageImageAtom);
     const navigate = useNavigate();
@@ -54,7 +58,7 @@ export default function GalleryPage(){
                     <img src="/assets/meta/audio-spectrum.gif"/>
                 </GalleryAudioSpectrum>
                 <GallerySrcollDownText>
-                    <h1>PLEASE SCROLL DOWN</h1>
+                    <div>PLEASE SCROLL DOWN</div>
                 </GallerySrcollDownText>
             </div>
             : null
@@ -64,7 +68,9 @@ export default function GalleryPage(){
             ?
             <div>
             <DetailPageDesc/>
-            <HoverButton button_label={"SELECT"} handleclick={onHandleClicks}/>
+            <StyledGalleryButton>
+                <HoverButton button_label={"SELECT"} handleclick={onHandleClicks}/>
+            </StyledGalleryButton>
             <Footer/>
             </div>
             :

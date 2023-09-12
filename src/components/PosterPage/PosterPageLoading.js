@@ -22,6 +22,7 @@ const StylePosterLoading = styled.img`
 `
 
 
+
 const PosterLoading = "/assets/gif/loading.gif";
 export default function PosterPageLoading(){
     return (
