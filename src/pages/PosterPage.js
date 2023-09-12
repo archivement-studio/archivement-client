@@ -19,7 +19,10 @@ const StylePosterPage = styled.div`
     width: 100%;
     height: 100;
     z-index: -1;
+`
 
+const StylePosterHoverButton = styled.div`
+    margin-top: 73px;
     position: relative;
     z-index: 0;
 `
