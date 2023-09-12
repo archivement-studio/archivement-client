@@ -17,8 +17,8 @@ const StylePosterLoadingImage = styled.img`
     display: flex;
     margin: 0px auto;
     flex-shrink: 0;
-    width: 273px;
-    height: 273px;
+    width: 110px;
+    height: 110px;
 `
 const StylePosterLoading = styled.div`
     position: absolute;
