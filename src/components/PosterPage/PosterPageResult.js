@@ -19,7 +19,6 @@ const SytledPosterInnerDiv = styled.div`
     position: absolute;
     display: flex;
 `
-
 const SytledPosterInnerImgDiv = styled.div`
     top: 7%;
     left: 50%;
@@ -27,7 +26,6 @@ const SytledPosterInnerImgDiv = styled.div`
     position: absolute;
     display: flex;
 `
-
 const StyledPosterInnerImg = styled.img`
     width: 50%;
     margin: 0px auto;
@@ -49,6 +47,9 @@ export default function PosterPageResult(){
             <SytledPosterInnerImgDiv>
             <StyledPosterInnerImg src="/assets/meta/poster-meta.png" data-aos="flip-up" data-aos-delay="650"/>
             </SytledPosterInnerImgDiv>
+            <SytledPosterInnerDiv>
+                <StyledPosterInnerImg src="/assets/meta/poster-meta.png" data-aos="flip-up" data-aos-delay="650"/>
+            </SytledPosterInnerDiv>
             <SytledPosterInnerDiv>
                 <div data-aos="zoom-out" data-aos-duration="500">
                     <h1>포스터가 완성되었습니다.</h1>
