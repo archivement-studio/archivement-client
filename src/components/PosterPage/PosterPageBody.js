@@ -17,6 +17,7 @@ const StylePosterImage = styled.img`
     flex-shrink: 0;
     width: 970px;
     height: 545px;
+    border-radius: 5px;
 `
 
 const StylePosterUsernameDiv = styled.div`
@@ -36,7 +37,17 @@ const StylePosterLineBar = styled.div`
 `
 
 
-const posterImage = "/assets/meta/about-meta.png";
+const StylePosterHoverButton = styled.div`
+    margin-top: 50px;
+`   
+
+const StylePosterLineBar = styled.div`
+    display: block;
+    cursor: pointer;
+`
+
+
+const posterImage = "/assets/images/gallery/13.jpg";
 
 export default function PosterPageBody(){
     const [posterState,setPosterState] = useRecoilState(PosterPageAtom);

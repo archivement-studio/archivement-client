@@ -13,7 +13,14 @@ const StyledPosterOutterImg = styled.img`
     opacity: 0.5;
 `
 const SytledPosterInnerDiv = styled.div`
-    top: 20%;
+    top: 9%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    position: absolute;
+    display: flex;
+`
+const SytledPosterInnerImgDiv = styled.div`
+    top: 7%;
     left: 50%;
     transform: translate(-50%, 50%);
     position: absolute;
@@ -37,6 +44,9 @@ export default function PosterPageResult(){
             <StyledPosterOutterDiv>
                 <StyledPosterOutterImg src="/assets/meta/poster-meta.png" data-aos="zoom-in" data-aos-delay="550"/>
             </StyledPosterOutterDiv>
+            <SytledPosterInnerImgDiv>
+            <StyledPosterInnerImg src="/assets/meta/poster-meta.png" data-aos="flip-up" data-aos-delay="650"/>
+            </SytledPosterInnerImgDiv>
             <SytledPosterInnerDiv>
                 <StyledPosterInnerImg src="/assets/meta/poster-meta.png" data-aos="flip-up" data-aos-delay="650"/>
             </SytledPosterInnerDiv>

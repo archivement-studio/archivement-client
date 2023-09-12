@@ -3,7 +3,8 @@ import Header from "../components/Header";
 import MainPageBody from "../components/MainPage/MainPageBody";
 
 const StyleMainPage = styled.div`
-    background-image: url("/assets/images/main-page-background.png");
+    // background-image: url("/assets/videos/main-background.mp4");
+    // background-image: url("/assets/images/main-page-background.png");
     content: "";
     position: fixed;
     top: 0;
@@ -19,5 +20,6 @@ export default function MainPage(){
             <Header/>
             <MainPageBody/>
         </StyleMainPage>
+
     )
 }
