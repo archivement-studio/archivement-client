@@ -8,8 +8,6 @@ const StylePosterUsername = styled.div`
 
 
     line-height: 70px;
-
-    margin-top: 181px;
 `;
 
 const StylePosterUsernameText = styled.input`
@@ -44,7 +42,6 @@ const StyleUserNameTitle = styled.div`
 export default function PosterPageUsername(){
     let [isInputClicked, setIsInputClicked] = useState(false);
     return (
-        
         <StylePosterUsername>
             <StyleUserNameTitle>
                 당신의 이름을 알려주세요.

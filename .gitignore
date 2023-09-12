@@ -29,6 +29,5 @@ public/assets/meta/
 # test_component
 src/test_component/
 
-
 # docker compose 
 docker-compose.yml
