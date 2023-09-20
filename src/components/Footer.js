@@ -18,7 +18,14 @@ const StyleFooterLeftItem = styled.div`
 const StyleFooterRightItem = styled.div`
     text-align: right;
     padding-top: 78px;
-`
+
+    font-family: Pretendard;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%; /* 36px */
+    letter-spacing: -0.144px;
+    `
 
 const StyleArchivementIcon = styled.img`
     width: 105px;
@@ -28,6 +35,7 @@ const StyleArchivementIcon = styled.img`
 const StyleArchivementLogo = styled.img`
     padding-bottom: 28px;
     width: 275px;
+
 `
 
 const archivementIcon = "/assets/icons/archivement-icon.png";
@@ -37,13 +45,13 @@ export default function Footer(){
         <StyledFooter id="footer">
             <StyleFooterLeftItem>
                 <StyleArchivementIcon src={archivementIcon}/>
-                <h1 className="footer-title">SceneScape Demo</h1>
-                <h1 className="footer-copyright">copyright. 2023 codecolony all right reserved.</h1>
+                <div className="footer-title">SceneScape Demo</div>
+                <div className="footer-copyright">copyright. 2023 codecolony all right reserved.</div>
             </StyleFooterLeftItem>
             <StyleFooterRightItem>
                 <StyleArchivementLogo src="/assets/images/archivement-logo.png"/>
-                <h1>codecolony@gmail.com</h1>
-                <h1>+82 010-2795-1240</h1>
+                <div>codecolony@gmail.com</div>
+                <div>+82 010-2795-1240</div>
             </StyleFooterRightItem>
         </StyledFooter>
     );

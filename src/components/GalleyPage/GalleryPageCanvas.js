@@ -5,9 +5,9 @@ import './GalleryPageCanvas.css'
 
 export default function GalleryPageCanvas(){
     return (
-        <Canvas>
+        <Canvas id='gallery-canvas'>
             <Suspense fallback={null}>
-            <Carousel />
+                <Carousel />
             </Suspense>
         </Canvas>
     );

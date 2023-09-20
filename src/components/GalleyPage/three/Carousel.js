@@ -153,7 +153,7 @@ const Carousel = () => {
   --------------------*/
   const renderSlider = () => {
     return (
-      <group ref={setRoot}>
+      <group ref={setRoot} >
         {images.map((item, i) => (
           <CarouselItem
             width={planeSettings.width}

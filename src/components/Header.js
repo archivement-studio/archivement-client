@@ -37,6 +37,7 @@ const StyleHeaderMenuCenterItem = styled.div`
     display: flex;
     margin: auto 0px;
     width: 300px;
+    cursor: none;
 `
 
 
@@ -61,6 +62,10 @@ export default function Header(){
     function onCLickSoundNav(){
         let soundStateTemp = { ...soundState };
         soundStateTemp['sound_state'] = !soundStateTemp['sound_state'];
+        if (!soundStateTemp['sound_state']){
+            let a = document.getElementById('sound');
+            console.log(a);
+        }
         setSoundState(soundStateTemp);
     }
 
@@ -71,7 +76,7 @@ export default function Header(){
                 <div id="store"><a className="link" href="https://smartstore.naver.com/givven">STORE</a></div>
             </StyleHeaderMenuLeftItem>
             <StyleHeaderMenuCenterItem>
-                <Link className="link" to="/"><StyleHeaderLogo src={archivementLogo}/></Link>
+                <Link id="archivement-header-logo" to="/"><StyleHeaderLogo src={archivementLogo}/></Link>
             </StyleHeaderMenuCenterItem>
             <StyleHeaderMenuRightItem>
                 <div id="about"><Link className="link" to="/about">ABOUT</Link></div>
