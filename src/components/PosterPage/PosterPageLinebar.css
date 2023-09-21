@@ -1,3 +1,12 @@
 .react-draggable{
     position: absolute;
+    cursor: none;
+}
+
+.react-draggable > div{
+    cursor: none;
+}
+
+.react-draggable > img{
+    cursor: none;
 }

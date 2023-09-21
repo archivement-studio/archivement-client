@@ -2,6 +2,7 @@ import { styled } from "styled-components";
 import HoverButton from "../HoverButton";
 import "./MainPageBody.css"
 import { useNavigate } from "react-router-dom";
+import Button from "../Button";
 // import ReactPlayer from 'react-player'
 
 const archivementIcon = "/assets/icons/archivement-icon.png";
@@ -87,7 +88,8 @@ export default function MainPageBody(){
                     <div>씬스케이프로 직접 아카이브먼트 포스터를 만들어보세요.</div>
                 </StyledMainPageBodyIntro>
                 <StyledHoverButtonDiv>
-                    <HoverButton button_label={"Select"} handleclick={onHandleClick}/>
+                    {/* <HoverButton button_label={"Select"} handleclick={onHandleClick}/> */}
+                    <Button button_label={"EXPLORE"} to={"/gallery"}/>
                 </StyledHoverButtonDiv>
             </StyledMainTitle>
         </StyledMainPageBody>

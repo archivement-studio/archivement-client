@@ -8,3 +8,17 @@
     background-repeat: no-repeat;
     background-size: cover;
 }
+
+#poster-about-title{
+    text-align: center;
+    color: #FFF;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+    padding-top: 95px;
+    padding-bottom: 77px;
+}

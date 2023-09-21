@@ -6,14 +6,76 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+  /* 드래그 방지 */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-use-select: none;
+  user-select: none;
+  cursor: none;
 }
 
 html{
   background-color: #000000;
   color: #ffffff;
+  cursor: none;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  monospace;
+}
+
+.cursor {
+  width: 25px;
+  height: 25px;
+  border: 2px solid #fefefe;
+  border-radius: 100%;
+  position: fixed;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition: all 150ms ease;
+  transition-property: background-color, opacity, transform, mix-blend-mode;
+  z-index: 9999;
+  mix-blend-mode: difference;
+}
+
+.cursor--hidden {
+  opacity: 0;
+}
+
+.cursor--link-hovered {
+  transform: translate(-50%, -50%) scale(1.25);
+  background-color: #fefefe;
+}
+
+.cursor--clicked {
+  transform: translate(-50%, -50%) scale(0.9);
+  background-color: #fefefe;
+}
+
+
+h1 {
+  margin-bottom: 0.7em;
+  font-size: 2em;
+  font-weight: 600;
+  text-align: center;
+}
+
+p {
+  width: 80%;
+  max-width: 32em;
+  margin: 0 auto 1em;
+  line-height: 1.7;
+  font-weight: 300;
+}
+
+a {
+  text-decoration: underline;
+  color: #fefefe;
+}
+
+
+html *,
+body * {
+    cursor: none;
 }

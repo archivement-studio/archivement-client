@@ -15,10 +15,17 @@
     cursor: pointer;
     color: #FFFFFF;
     width: 92px;
+
+    padding-left: 10px;
 }
 
 #sound:hover{
-    color: #000000;
+    color: #ffffff;
+}
+
+.link:hover{
+    color: #ffffff;
+    filter: none;
 }
 
 .link{
@@ -32,4 +39,12 @@
     line-height: normal;
 
     margin: 0px auto;
+    filter: blur(1.5px);
+
+    cursor: none;
+}
+
+#archivement-header-logo{
+    margin: 0px auto;
+    cursor: none;
 }

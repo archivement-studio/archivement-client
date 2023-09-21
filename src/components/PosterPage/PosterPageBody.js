@@ -10,6 +10,7 @@ import ModalOverlay from "../ModalOverlay";
 import { Navigate } from "react-router-dom";
 import PosterPageLinebar from "./PosterPageLinebar";
 import PosterPageResult from "./PosterPageResult";
+import Button from "../Button";
 
 const StylePosterImage = styled.img`
     display: flex;
@@ -53,6 +54,7 @@ export default function PosterPageBody(){
     const [posterState,setPosterState] = useRecoilState(PosterPageAtom);
 
     function buttonClickEvent(){
+        console.log("힝?")
         let posterStateTemp = { ...posterState };
         let step = posterStateTemp['step'];
         if(step !== 3){
@@ -63,8 +65,6 @@ export default function PosterPageBody(){
     }
 
     function movePosterLinebar(event){
-        console.log("ㅋㅋㅋㅋㅋㅋ",event);
-        console.log(event.pageX, event.pageY);
     }
 
     const posterImageRef = useRef(null);
@@ -83,7 +83,8 @@ export default function PosterPageBody(){
             </StylePosterLineBar>
             <StylePosterImage src={posterImage} ref={posterImageRef} id="poster-image"/>
             <StylePosterHoverButton>
-                <HoverButton button_label={"Next"} onclick={buttonClickEvent}/>
+                <Button button_label={"NEXT"} onclick={buttonClickEvent}/>
+                {/* <HoverButton button_label={"NEXT"} onclick={buttonClickEvent}/> */}
             </StylePosterHoverButton>
         </div>;
     } 
@@ -94,7 +95,8 @@ export default function PosterPageBody(){
             <StylePosterUsernameDiv>
                 <PosterPageUsername/>
                 <StylePosterHoverButton>
-                    <HoverButton button_label={"Next"} onclick={buttonClickEvent}/>
+                    <Button button_label={"NEXT"} onclick={buttonClickEvent}/>
+                    {/* <HoverButton button_label={"NEXT"} onclick={buttonClickEvent}/> */}
                 </StylePosterHoverButton>
             </StylePosterUsernameDiv>
         </div>;

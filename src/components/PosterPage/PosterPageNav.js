@@ -27,7 +27,7 @@ const StyledNavLeftItem = styled.div`
     margin-right: 39px;
     width: 50px;
 
-    cursor: pointer;
+    cursor: none;
 `;
 
 const StyledNavCenterItem = styled.div`
@@ -47,7 +47,7 @@ const StyledNavRgithItem = styled.div`
     margin-left: 39px;
     width: 50px;
 
-    cursor: pointer;
+    cursor: none;
 `;
 
 const poster_left_nav = "/assets/icons/poster-left-nav.svg";

@@ -22,7 +22,7 @@ const PostProcessing = forwardRef((_, ref) => {
   return (
     active ? 
     <mesh position={[0, 0, 1]}>
-      <planeGeometry args={[viewport.width, viewport.height]} />
+      <planeGeometry args={[viewport.width, viewport.height]}/>
       <MeshTransmissionMaterial
         ref={ref}
         background={new Color('white')}

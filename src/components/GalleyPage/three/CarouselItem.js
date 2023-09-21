@@ -22,9 +22,9 @@ const CarouselItem = ({
 
   const [galleryImage, setGelleryImage] = useRecoilState(GalleryPageImageAtom);
 
-  useEffect(() => {
-    setGelleryImage(null);
-  },[])
+  // useEffect(() => {
+  //   setGelleryImage(null);
+  // },[])
 
 
   useEffect(() => {
