@@ -22,6 +22,11 @@ const GalleryAudioSpectrum = styled.div`
     transform: translate( -50%, -50% );
 `
 
+const GalleryAudioSpectrumImg = styled.img`
+    width: 80px;
+    height: 150px;
+`
+
 const GallerySrcollDownText = styled.div`
     position: absolute;
     top: 90%;
@@ -94,7 +99,8 @@ export default function GalleryPage(){
             ?
             <div>
                 <GalleryAudioSpectrum>
-                    <img src="/assets/meta/audio-spectrum.gif"/>
+                    {/* <img src="/assets/meta/audio-spectrum.gif"/> */}
+                    <GalleryAudioSpectrumImg src="/assets/gif/archivement_spectrum.gif"/>
                     {/* <img src="/assets/meta/audio-spectrum.gif"/> */}
                 </GalleryAudioSpectrum>
                 <GallerySrcollDownText>
