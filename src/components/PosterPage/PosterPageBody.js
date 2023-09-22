@@ -7,10 +7,11 @@ import { useRecoilState } from "recoil";
 import PosterPageAtom from "../../state/PosterPageAtom";
 import HoverButton from "../HoverButton";
 import ModalOverlay from "../ModalOverlay";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import PosterPageLinebar from "./PosterPageLinebar";
 import PosterPageResult from "./PosterPageResult";
 import Button from "../Button";
+import GalleryPageImageAtom from "../../state/GalleryPageImageAtom";
 
 const StylePosterImage = styled.img`
     display: flex;
@@ -52,6 +53,14 @@ const posterImage = "/assets/images/gallery/13.jpg";
 
 export default function PosterPageBody(){
     const [posterState,setPosterState] = useRecoilState(PosterPageAtom);
+    const [galleryImage, setGalleryImage] = useRecoilState(GalleryPageImageAtom);
+    const navigate = useNavigate();
+
+    if(!galleryImage){
+        console.log("힝");
+        console.log(galleryImage);
+        navigate('/gallery');
+    }
 
     function buttonClickEvent(){
         console.log("힝?")
@@ -81,7 +90,10 @@ export default function PosterPageBody(){
             <StylePosterLineBar>
                 <PosterPageLinebar/>
             </StylePosterLineBar>
-            <StylePosterImage src={posterImage} ref={posterImageRef} id="poster-image"/>
+            { galleryImage ?
+                (<StylePosterImage src={galleryImage['image']} ref={posterImageRef} id="poster-image"/>)
+            : null
+            }
             <StylePosterHoverButton>
                 <Button button_label={"NEXT"} onclick={buttonClickEvent}/>
                 {/* <HoverButton button_label={"NEXT"} onclick={buttonClickEvent}/> */}
