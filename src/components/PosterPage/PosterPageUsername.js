@@ -39,7 +39,7 @@ const StyleUserNameTitle = styled.div`
     letter-spacing: -0.168px;
 `
 
-export default function PosterPageUsername(){
+export default function PosterPageUsername({onChangeUsername}){
     let [isInputClicked, setIsInputClicked] = useState(false);
     return (
         <StylePosterUsername>
@@ -51,6 +51,7 @@ export default function PosterPageUsername(){
                 onFocus={ ()=> setIsInputClicked(true) }
                 onBlur={ ()=> setIsInputClicked(false)}
                 placeholder={isInputClicked === true ? "" : "이름을 입력해주세요."}
+                onChange={onChangeUsername}
             />
         </StylePosterUsername>
 
