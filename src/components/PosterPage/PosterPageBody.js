@@ -12,6 +12,8 @@ import PosterPageLinebar from "./PosterPageLinebar";
 import PosterPageResult from "./PosterPageResult";
 import Button from "../Button";
 
+const axios = require('axios');
+
 const StylePosterImage = styled.img`
     display: flex;
     margin: 0px auto;
@@ -117,6 +119,8 @@ export default function PosterPageBody(){
 
     async function onChange(){
         if (posterState['step'] === 2){
+            console.log(axios)
+
             let promise = new Promise((resolve, reject) => {
                 setTimeout(() => resolve("완료!"), 3000)
             });
