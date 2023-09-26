@@ -9,7 +9,7 @@ export async function postPoster(formData,setResultPosterState){
         .then(function(response){
             console.log(response);
             const data = response['data']
-            setResultPosterState(data['image_url']);
+            setResultPosterState(data);
         })
         .catch(function(error){
             console.log(error);

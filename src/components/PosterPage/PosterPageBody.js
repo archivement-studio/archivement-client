@@ -120,7 +120,7 @@ export default function PosterPageBody(){
     else{
         pageBody= 
         <div>
-            <PosterPageResult/>
+            <PosterPageResult resultPosterState={resultPosterState}/>
         </div>
     }
 

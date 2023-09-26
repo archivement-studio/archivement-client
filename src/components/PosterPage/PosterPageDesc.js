@@ -28,17 +28,18 @@ const StyledRgithItemComponent = styled.div`
     border-bottom: 1px solid;
 `;
 
-export default function PosterPageDesc(){
+export default function PosterPageDesc({resultPosterState}){
+    console.log(resultPosterState)
     return (
         <StyledPosterPageDesc id="poster-desc">
             <StyledDescItem>
                 <StyledRgithItemComponent className="detail-right-component">
                     <div>DATE</div>
-                    <div>2023.00.00</div>
+                    <div>{resultPosterState['date']}</div>
                 </StyledRgithItemComponent>
                 <StyledRgithItemComponent className="detail-right-component">
                     <div>NAME</div>
-                    <div>입력한 이름 노출</div>
+                    <div>{resultPosterState['name']}</div>
                 </StyledRgithItemComponent>
                 <StyledRgithItemComponent className="detail-right-component">
                     <div>PLACE</div>

@@ -31,3 +31,12 @@ src/test_component/
 
 # docker compose 
 docker-compose.yml
+
+# gallery images
+public/assets/images/gallery
+
+# videos
+public/assets/videos
+
+# audio
+public/assets/audios
