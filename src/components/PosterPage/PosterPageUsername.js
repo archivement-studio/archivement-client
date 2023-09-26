@@ -25,7 +25,6 @@ const StylePosterUsernameText = styled.input`
 
     width: 474px;
     height: 70px;
-
     margin-top: 36px;
 `
 const StyleUserNameTitle = styled.div`
@@ -44,14 +43,14 @@ export default function PosterPageUsername({onChangeUsername}){
     return (
         <StylePosterUsername>
             <StyleUserNameTitle>
-                당신의 이름을 알려주세요.
+                포스터의 제목을 적어주세요.
             </StyleUserNameTitle>
             <StylePosterUsernameText 
                 className="username"
                 onFocus={ ()=> setIsInputClicked(true) }
                 onBlur={ ()=> setIsInputClicked(false)}
-                placeholder={isInputClicked === true ? "" : "이름을 입력해주세요."}
                 onChange={onChangeUsername}
+                placeholder={isInputClicked === true ? "" : "제목을 입력해주세요."}
             />
         </StylePosterUsername>
 

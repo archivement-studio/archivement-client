@@ -1,4 +1,4 @@
-import { styled } from "styled-components";
+import { keyframes, styled } from "styled-components";
 import PosterPageNav from "./PosterPageNav";
 import PosterPageUsername from "./PosterPageUsername";
 import PosterPageLoading from "./PosterPageLoading";
@@ -7,7 +7,7 @@ import { useRecoilState } from "recoil";
 import PosterPageAtom from "../../state/PosterPageAtom";
 import HoverButton from "../HoverButton";
 import ModalOverlay from "../ModalOverlay";
-import { Navigate } from "react-router-dom";
+import { Navigate, useNavigate } from "react-router-dom";
 import PosterPageLinebar from "./PosterPageLinebar";
 import PosterPageResult from "./PosterPageResult";
 import Button from "../Button";
@@ -21,6 +21,50 @@ const StylePosterImage = styled.img`
     width: 970px;
     height: 545px;
     border-radius: 5px;
+
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+`
+
+const poster1Animation = keyframes`
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 0.25;
+    }
+    50%{
+        opacity: 0.5;
+    }
+    75%{
+        opacity: 0.75;
+    }
+
+    100%{
+        opacity: 1;
+    }
+`
+
+const poster2Animation = keyframes`
+    0%{
+        left: 100%;
+    }
+    25%{
+        left: 80%;
+    }
+    50%{
+        left: 70%;
+    }
+    75%{
+        left: 60%;
+    }
+
+    100%{
+        left: 50%;
+    }
 `
 
 const StylePosterUsernameDiv = styled.div`
@@ -28,15 +72,27 @@ const StylePosterUsernameDiv = styled.div`
     top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
+    animation: ${poster1Animation} 0.7s linear alternate forwards;
 `
 
+const StylePoster1HoverButton = styled.div`
+    margin-top: 80px;
+    // margin-bottom: 33px;
+`   
+
 const StylePosterHoverButton = styled.div`
-    margin-top: 73px;
+    margin-top: 40px;
+    margin-bottom: 33px;
 `   
 
 const StylePosterLineBar = styled.div`
     display: block;
     cursor: pointer;
+`
+
+const PosterAnimationDiv = styled.div`
+    opacity: 0;
+    animation: ${poster1Animation} 0.7s linear alternate forwards;
 `
 
 
@@ -57,6 +113,14 @@ export default function PosterPageBody(){
     const [resultPosterState,setResultPosterState] = useState(null);
     const [username,setUsername] = useState("");
     const [galleryImage, setGelleryImage] = useRecoilState(GalleryPageImageAtom);
+
+    const navigate = useNavigate();
+
+    if(!galleryImage){
+        console.log("힝");
+        console.log(galleryImage);
+        navigate('/gallery');
+    }
 
     function buttonClickEvent(){
         console.log("힝?")
@@ -83,19 +147,26 @@ export default function PosterPageBody(){
     },[])
 
     let pageBody;
-    if (posterState['step'] === 0) {
+    if (posterState['step'] === -1){
+        navigate("/gallery")
+    }
+
+    else if (posterState['step'] === 0) {
         pageBody = 
-        <div>
+        <PosterAnimationDiv>
             <PosterPageNav/>
             <StylePosterLineBar>
                 <PosterPageLinebar/>
             </StylePosterLineBar>
-            <StylePosterImage src={posterImage} ref={posterImageRef} id="poster-image"/>
-            <StylePosterHoverButton>
+            { galleryImage ?
+                (<StylePosterImage src={galleryImage['image']} ref={posterImageRef} id="poster-image"/>)
+            : null
+            }
+            <StylePoster1HoverButton>
                 <Button button_label={"NEXT"} onclick={buttonClickEvent}/>
                 {/* <HoverButton button_label={"NEXT"} onclick={buttonClickEvent}/> */}
-            </StylePosterHoverButton>
-        </div>;
+            </StylePoster1HoverButton>
+        </PosterAnimationDiv>;
     } 
     else if (posterState['step'] === 1){
         pageBody= 

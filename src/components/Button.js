@@ -33,6 +33,10 @@ const StyleText = styled.div`
     letter-spacing: -0.132px;
 `
 
+const StyleImg = styled.img`
+    margin: auto auto;
+    width: 20px
+`
 const StyleBorder = styled.div`
     background: url(https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F4809359%2Fattach%2F1af7989e615749b0b3f522ea82e59ba8) padding-box, linear-gradient(90deg, #eaeaa7 , #ffcdf3aa, #c1b0e6) border-box;
 
@@ -46,11 +50,16 @@ const StyleBorder = styled.div`
     height: 60px;
 `
 
-export default function Button({button_label,to,onclick}){
+export default function Button({button_label, button_image, to, onclick, id}){
     return(
         <Link onClick={onclick} to={to}>
-            <StyledButton id="button">
+            <StyledButton className="button" id={id}>
+                { button_label ?
                 <StyleText>{button_label}</StyleText>
+                : null}
+                { button_image ?
+                <StyleImg src={button_image}/>
+                : null}
             </StyledButton>
         </Link>
     );

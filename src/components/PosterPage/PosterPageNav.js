@@ -59,7 +59,7 @@ export default function PosterPageNav(){
     function onLeftButton(){
         let posterStateTemp = { ...posterState };
         let step = posterStateTemp['step'];
-        if(step !== 0){
+        if(step !== -1){
             posterStateTemp['step'] = posterStateTemp['step'] - 1; 
         }
 

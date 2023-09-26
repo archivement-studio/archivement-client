@@ -21,17 +21,20 @@ const StyledMainPageBodyIntro = styled.div`
     line-height: 150%; /* 48px */
     letter-spacing: -0.192px;
 
-    margin-top: 53px;
+    margin-top: 45px;
+    font-weight: 600;
 `
 const StyleArchivementIcon = styled.img`
     display: flex;
     margin: 0px auto;
     flex-shrink: 0;
-    width: 119px;
+    width: 107px;
+
+    margin-top: 10px;
 `
 
 const StyledHoverButtonDiv = styled.div`
-    margin-top: 50px;
+    margin-top: 45px;
 `
 
 const StyledMainVideoDiv = styled.div`
@@ -46,7 +49,7 @@ const StyledMainVideo = styled.video`
 
 const StyledMainTitle = styled.div`
     position: relative;
-    top: -700px;
+    top: -638px;
 `
 
 

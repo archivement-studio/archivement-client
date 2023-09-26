@@ -22,14 +22,22 @@ const StyleFooterRightItem = styled.div`
     font-family: Pretendard;
     font-size: 24px;
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     line-height: 150%; /* 36px */
     letter-spacing: -0.144px;
-    `
+`
 
 const StyleArchivementIcon = styled.img`
     width: 105px;
-    margin-bottom: 22px;
+    margin-top: 20px;
+    margin-bottom: 30px;
+`
+
+const StyleArchivementLogo = styled.img`
+    padding-top: 8px;
+    padding-bottom: 20px;
+    width: 275px;
+
 `
 
 const StyleArchivementLogo = styled.img`

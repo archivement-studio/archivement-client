@@ -17,10 +17,14 @@
     width: 92px;
 
     padding-left: 10px;
+
+    filter: blur(1.5px);
 }
 
 #sound:hover{
     color: #ffffff;
+
+    filter: none;
 }
 
 .link:hover{

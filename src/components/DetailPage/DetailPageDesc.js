@@ -1,5 +1,7 @@
 import { styled } from "styled-components";
 import "./DetailPageDesc.css";
+import GalleryPageImageAtom from "../../state/GalleryPageImageAtom";
+import { useRecoilState } from "recoil";
 
 const StyledDetailPageDesc = styled.div`
     display: flex;
@@ -39,25 +41,45 @@ const StyledRgithItemComponent = styled.div`
 `;
 
 export default function DetailPageDesc(){
+    const [galleryImage, setGelleryImage] = useRecoilState(GalleryPageImageAtom);
+
+    // let audio = new Audio(galleryImage['audio'])
+
+    // const start = () => {
+    //     audio.play()
+    // }
+
+    // if (galleryImage){
+    //     audio.play();
+    // }
+    // else{
+    //     audio.pause();
+    // }
+
+
     return (
         <StyledDetailPageDesc id="detail-desc">
+            <audio src={galleryImage['audio']} autoPlay={true} loop={true}></audio>
             <StyledDescLeftItem>
-            이곳은 사진 설명이 들어갈 공간입니다. 이곳은 사진 설명이 들어갈 공간입니다. 이곳은 사진 설명이 들어갈 공간입니다. 이곳은 사진 설명이 들어갈 공간입니다. 이곳은 사진 설명이 들어갈 공간입니다. 이곳은 사진 설명이 들어갈 공간입니다. 이곳은 사진 설명이 들어갈 공간입니다. 이곳은 사진 설명이 들어갈 공간입니다. 이곳은 사진 설명이 들어갈 공간입니다. 
+                {galleryImage['desc']}
             </StyledDescLeftItem>
             <StyledDescRgithItem>
                 <StyledRgithItemComponent className="detail-right-component">
                     <div>DATE</div>
-                    <div>2023.00.00</div>
+                    <div>{galleryImage['date']}</div>
                 </StyledRgithItemComponent>
                 <StyledRgithItemComponent className="detail-right-component">
                     <div>NAME</div>
-                    <div>SW. Hwang</div>
+                    <div>{galleryImage['name']}</div>
                 </StyledRgithItemComponent>
                 <StyledRgithItemComponent className="detail-right-component">
                     <div>PLACE</div>
-                    <div>Japan</div>
+                    <div>{galleryImage['place']}</div>
                 </StyledRgithItemComponent>
             </StyledDescRgithItem>
+            {/* <audio controls autoplay>
+                <source src="/file_voice/sample.mp3" type="audio/mp3">
+            </audio> */}
         </StyledDetailPageDesc>
     );
 }

@@ -12,7 +12,8 @@ Plane Settings
 ------------------------------*/
 const planeSettings = {
   width: 1,
-  height: 4.5, //사진 크기 설정
+  // height: 4.5, //사진 크기 설정
+  height: 5.2,
   gap: 0.1
 }
 

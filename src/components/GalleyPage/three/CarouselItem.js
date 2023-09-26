@@ -75,6 +75,8 @@ const CarouselItem = ({
     <group
       ref={$root}
       onClick={() => {
+        // let state = {'state':false};
+        // Object.assign(state,item)
         setActivePlane(index);
         setGelleryImage(item);
       }}

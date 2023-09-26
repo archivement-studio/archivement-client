@@ -2,15 +2,17 @@ import { styled } from "styled-components";
 
 const StyledPosterPageDesc = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 `;
 
 const StyledDescItem = styled.div`
     width: 550px;
-    position: absolute;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    top: 990px;
+
+    padding-top: 86px;
+    // position: absolute;
+    // left: 50%;
+    // transform: translate(-50%, 50%);
+    // top: 990px;
 
     color: #FFF;
     font-family: Pretendard;
@@ -28,8 +30,7 @@ const StyledRgithItemComponent = styled.div`
     border-bottom: 1px solid;
 `;
 
-export default function PosterPageDesc({resultPosterState}){
-    console.log(resultPosterState)
+export default function PosterPageDesc(){
     return (
         <StyledPosterPageDesc id="poster-desc">
             <StyledDescItem>

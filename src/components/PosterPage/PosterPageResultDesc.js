@@ -4,14 +4,13 @@ const StyledDetailPageDesc = styled.div`
     display: flex;
     justify-content: center;
 
-    background-color: #000000;
+    // background-color: #000000;
 
     // padding-right: 250px;
     // padding-left: 250px;
     // padding-top: 78px;
     // padding-bottom: 66px;
 
-    color: #FFF;
     font-family: Pretendard;
     font-size: 24px;
     font-style: normal;
@@ -26,7 +25,6 @@ const StyledDescLeftItem = styled.div`
 
     text-align: left;
 
-    color: #FFF;
     font-family: Pretendard;
     font-size: 24px;
     font-style: normal;
@@ -41,7 +39,6 @@ const StyledDescRightItem = styled.div`
 
     text-align: left;
 
-    color: #FFF;
     font-family: Pretendard;
     font-size: 22px;
     font-style: normal;
@@ -52,7 +49,7 @@ const StyledDescRightItem = styled.div`
 
 export default function PosterPageResultDesc({left_sentence, right_sentence}){
     return (
-        <StyledDetailPageDesc id="detail-desc">
+        <StyledDetailPageDesc>
             <StyledDescLeftItem>
                 {left_sentence}
             </StyledDescLeftItem>
