@@ -79,8 +79,6 @@ const CarouselItem = ({
         // Object.assign(state,item)
         setActivePlane(index);
         setGelleryImage(item);
-        console.log(galleryImage);
-        console.log("good",index);
       }}
       onPointerEnter={() => setHover(true)}
       onPointerLeave={() => setHover(false)}

@@ -3,7 +3,18 @@
     font-style: normal;
     font-weight: 500;
     line-height: normal;
-    margin-top: 142px;
+    /* margin-top: 142px; */
+    padding-top: 204px;
+    margin-bottom: 77px;
+}
+
+#story-intro-title{
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    /* margin-top: 142px; */
+    padding-top: 130px;
     margin-bottom: 77px;
 }
 
@@ -12,6 +23,10 @@
 
 }
 
- .margin-bottom-169{
+.margin-bottom-169{
     margin-bottom: 169px;
+}
+
+.margin-bottom-158{
+    margin-bottom: 158px;
  }

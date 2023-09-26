@@ -14,30 +14,50 @@ import PosterPageAtom from "../../state/PosterPageAtom";
 // }
 
 const Linebar = styled.div`
-  border-left: 6px solid #D9D9D9;
-  height: 545px;
+  border-left: 3px solid #FFFFFF;
+  // height: 545px;
+  height: 563px;
+  top: -9px;
   position:absolute;
   cursor: pointer;
 `
 
+const LinebarNav = styled.img`
+  position: absolute;
+  cursor: pointer;
+  top: -5px;
+  padding-right: 11px;
+  padding-left: 11px;
+  left: -11px;
+  // bottom: 5px;
+  // width: 25px;
+  cursor: pointer;
+  -webkit-user-drag: none;
+`
+
 const LinebarTop = styled.img`
   position: absolute;
-  left:-11px;
-  bottom: -3px;
-  width: 27px;
+  left: -12px;
+  // bottom: -3px;
+  bottom: 5px;
+  width: 26px;
   cursor: pointer;
   -webkit-user-drag: none;
 `
 
 const LinebarBottom = styled.img`
   position: absolute;
-  left:-11px;
+  left: -12px;
+  top: 549px;
   bottom: 0px;
-  width: 27px;
-  top: 541px;
+  width: 26px;
+  // top: 541px;
   cursor: pointer;
   -webkit-user-drag: none;
+}
 `
+
+const line_gap = 3
 
 export default function PosterLinebar(){
   const [activeDrags, setActiveDrags] = useState(0);
@@ -143,12 +163,12 @@ export default function PosterLinebar(){
   }
 
   return(
-    <Draggable bounds={{left: -485, right: 485-6}} positionOffset={{x: lineXPos, y: '0%'}} axis="x" onDrag={onDrag} >
+    <Draggable bounds={{left: -485, right: 485-line_gap}} positionOffset={{x: lineXPos, y: '0%'}} axis="x" onDrag={onDrag} >
       {/* <div id="linebar"/> */}
       <div>
-        <LinebarTop src="/assets/images/linebar-top.svg"/>
-        <Linebar></Linebar>
-        <LinebarBottom src="/assets/images/linebar-bottom.svg"/>
+        <LinebarTop src="/assets/images/linebar-circle.svg"/>
+        <LinebarNav src="/assets/images/linebar-nav.svg"/>
+        <LinebarBottom src="/assets/images/linebar-circle.svg"/>
       </div>
     </Draggable>
   );

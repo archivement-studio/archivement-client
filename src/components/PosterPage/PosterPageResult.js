@@ -1,12 +1,15 @@
 import { styled } from "styled-components";
 import AOS from "aos";
 import "aos/dist/aos.css";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import PosterPageDesc from "./PosterPageDesc";
 import Footer from "../Footer";
 import HoverButton from "../HoverButton";
 import PosterPageResultDesc from "./PosterPageResultDesc";
 import Button from "../Button";
+import "./PosterPageResult.css"
+import ModalOverlay from "../ModalOverlay";
+import DownloadOverlay from "../DownloadOverlay";
 
 const StyledPosterOutterDiv = styled.div`
     opacity: 0.5;
@@ -15,11 +18,12 @@ const StyledPosterOutterDiv = styled.div`
 
 const StyledPosterOutterImg = styled.img`
     width: 100%;
-    height: 100%;
+    // height: 100%;
+    height: 1080px;
     opacity: 0.5;
 `
 const SytledPosterInnerDiv = styled.div`
-    top: 200px;
+    top: 150px;
     left: 50%;
     transform: translate(-50%, 50%);
     position: absolute;
@@ -37,7 +41,7 @@ const SytledPosterInnerTitle = styled.div`
 `
 
 const SytledPosterInnerImgDiv = styled.div`
-    top: 0px;
+    top: -5px;
     left: 50%;
     transform: translate(-50%, 50%);
     position: absolute;
@@ -56,6 +60,7 @@ const StyleArchivementMiniLogo = styled.img`
     width: 351px;
     // position: relative;
     top: 500px;
+    margin-top: 70px;
 `
 
 const StyleArchivementSubTitle = styled.div`
@@ -80,16 +85,25 @@ const StyleDownloadButton = styled.div`
     position: absolute;
     display: flex;
     left: 50%;
-    top: 930px;
+    top: 850px;
 `   
 const StyleHomeButton = styled.div`
-    margin-bottom: 272px;
-    margin-top: 50px;
+    margin-bottom: 124px;
+    margin-top: 310px;
 `   
+const StyleHeartbutton = styled.div`
+    margin-top: 40px;
+`
 
 const archivementLogo = "/assets/images/archivement-logo.svg";
 
 export default function PosterPageResult(){
+    let [downloadImage, setDownloadImage] = useState(false);
+    const onHandleDownload = ()=>{
+        setDownloadImage(true);
+        console.log(downloadImage);
+    }
+
     useEffect(() => {
         AOS.init({
             once: false
@@ -98,6 +112,7 @@ export default function PosterPageResult(){
       
     return (
         <div>
+            <DownloadOverlay show={downloadImage}>
             <StyledPosterOutterDiv>
                 <StyledPosterOutterImg src="/assets/meta/poster-meta.png" data-aos="zoom-in" data-aos-delay="550"/>
             </StyledPosterOutterDiv>
@@ -109,11 +124,34 @@ export default function PosterPageResult(){
             <SytledPosterInnerImgDiv>
                 <StyledPosterInnerImg src="/assets/meta/poster-meta.png" data-aos="flip-up" data-aos-delay="650"/>
             </SytledPosterInnerImgDiv>
+            { downloadImage ?
+            <div>
+                <SytledPosterInnerImgDiv id="download-img-div">
+                    <StyledPosterInnerImg src="/assets/meta/qr_image.png"/>
+                </SytledPosterInnerImgDiv>
+                <div id="download-title">
+                    QR코드를 카메라로 인식하여
+                    사진을 다운로드하세요. 
+                </div>
+            </div>
+            : null
+            }
             <StyleDownloadButton>
-                <Button button_label={"Download"}/>
+                <Button button_label={"Download"} onclick={onHandleDownload}/>
                 {/* <HoverButton button_label={"Download"}/> */}
             </StyleDownloadButton>
             <PosterPageDesc/>
+            <div id="scenescape-desc">
+                <PosterPageResultDesc
+                    left_sentence={"SceneScape(씬스케이프)는 아카이브먼트의 방식으로 표현하는 자동 포스터 변환 프로그램입니다. 현 사이트에서 베타버전을 체험해보실 수 있습니다. 앞으로의 SceneScape는 직접 사진을 업로드하여 개개인의 추억이 담긴 포스터를 제작할 수 있도록 설계될 예정입니다.  다음 버전에 관심이 있다면 아래 하트를 눌러주세요."}
+                    right_sentence={"SceneScape is an automated poster conversion program that presents in an archival manner. It's currently in beta on our site. Future versions of SceneScape will be designed to allow you to upload your own photos to create a poster of your personal memories.  If you're interested in the next version, hit the heart below."}
+                />
+                <StyleHeartbutton>
+                    <Button button_image={"/assets/icons/heart.svg"} id={"heart-button"}/>
+                    {/* <HoverButton button_label={"Home"}/> */}
+                </StyleHeartbutton>
+            </div>
+            
             <StyleArchivementMiniLogo src={archivementLogo}/>
             {/* <StyleArchivementSubTitle>
                 <h1>아카이브먼트는 빠르게 스쳐갔던 사람들의 추억들을</h1>
@@ -131,6 +169,7 @@ export default function PosterPageResult(){
                 {/* <HoverButton button_label={"Home"}/> */}
             </StyleHomeButton>
             <Footer/>
+            </DownloadOverlay>
         </div>
     );
 }
