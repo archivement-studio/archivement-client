@@ -40,6 +40,12 @@ const StyleArchivementLogo = styled.img`
 
 `
 
+const StyleArchivementLogo = styled.img`
+    padding-bottom: 28px;
+    width: 275px;
+
+`
+
 const archivementIcon = "/assets/icons/archivement-icon.png";
 
 export default function Footer(){

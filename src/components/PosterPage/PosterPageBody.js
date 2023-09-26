@@ -11,6 +11,7 @@ import { Navigate, useNavigate } from "react-router-dom";
 import PosterPageLinebar from "./PosterPageLinebar";
 import PosterPageResult from "./PosterPageResult";
 import Button from "../Button";
+import { postPoster } from "../../api/poster";
 import GalleryPageImageAtom from "../../state/GalleryPageImageAtom";
 
 const StylePosterImage = styled.img`
@@ -109,7 +110,10 @@ const posterImage = "/assets/images/gallery/13.jpg";
 
 export default function PosterPageBody(){
     const [posterState,setPosterState] = useRecoilState(PosterPageAtom);
-    const [galleryImage, setGalleryImage] = useRecoilState(GalleryPageImageAtom);
+    const [resultPosterState,setResultPosterState] = useState(null);
+    const [username,setUsername] = useState("");
+    const [galleryImage, setGelleryImage] = useRecoilState(GalleryPageImageAtom);
+
     const navigate = useNavigate();
 
     if(!galleryImage){
@@ -127,6 +131,10 @@ export default function PosterPageBody(){
         }
 
         setPosterState(posterStateTemp)
+    }
+
+    function onChangeUsername(e){
+        setUsername(e.target.value)
     }
 
     function movePosterLinebar(event){
@@ -165,7 +173,7 @@ export default function PosterPageBody(){
         <div>
             <PosterPageNav/>
             <StylePosterUsernameDiv>
-                <PosterPageUsername/>
+                <PosterPageUsername onChangeUsername={onChangeUsername}/>
                 <StylePosterHoverButton>
                     <Button button_label={"NEXT"} onclick={buttonClickEvent}/>
                     {/* <HoverButton button_label={"NEXT"} onclick={buttonClickEvent}/> */}
@@ -183,12 +191,24 @@ export default function PosterPageBody(){
     else{
         pageBody= 
         <div>
-            <PosterPageResult/>
+            <PosterPageResult resultPosterState={resultPosterState}/>
         </div>
     }
 
     async function onChange(){
         if (posterState['step'] === 2){
+            console.log(username);
+            console.log(galleryImage["number"]);
+            console.log(posterState["line_xpos"]);
+            
+            postPoster({
+                'name':username,
+                'client_image_width':970,
+                'client_line_gap':6,
+                'image_number':galleryImage["number"],
+                'x_position':posterState["line_xpos"]
+            },setResultPosterState);
+
             let promise = new Promise((resolve, reject) => {
                 setTimeout(() => resolve("완료!"), 3000)
             });

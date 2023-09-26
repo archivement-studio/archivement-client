@@ -37,7 +37,6 @@ const StyleImg = styled.img`
     margin: auto auto;
     width: 20px
 `
-
 const StyleBorder = styled.div`
     background: url(https://img1.daumcdn.net/thumb/C428x428/?scode=mtistory2&fname=https%3A%2F%2Ftistory4.daumcdn.net%2Ftistory%2F4809359%2Fattach%2F1af7989e615749b0b3f522ea82e59ba8) padding-box, linear-gradient(90deg, #eaeaa7 , #ffcdf3aa, #c1b0e6) border-box;
 

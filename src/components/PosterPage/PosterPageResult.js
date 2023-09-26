@@ -7,9 +7,11 @@ import Footer from "../Footer";
 import HoverButton from "../HoverButton";
 import PosterPageResultDesc from "./PosterPageResultDesc";
 import Button from "../Button";
+
 import "./PosterPageResult.css"
 import ModalOverlay from "../ModalOverlay";
 import DownloadOverlay from "../DownloadOverlay";
+
 
 const StyledPosterOutterDiv = styled.div`
     opacity: 0.5;
@@ -109,12 +111,17 @@ export default function PosterPageResult(){
             once: false
         });
     })
+    console.log(resultPosterState);
       
     return (
         <div>
+        { 
+            resultPosterState
+            ?
+            <div>
             <DownloadOverlay show={downloadImage}>
             <StyledPosterOutterDiv>
-                <StyledPosterOutterImg src="/assets/meta/poster-meta.png" data-aos="zoom-in" data-aos-delay="550"/>
+                <StyledPosterOutterImg src={resultPosterState['image_url']} data-aos="zoom-in" data-aos-delay="550"/>
             </StyledPosterOutterDiv>
             <SytledPosterInnerDiv>
                 <div data-aos="zoom-out" data-aos-duration="500">
@@ -122,7 +129,7 @@ export default function PosterPageResult(){
                 </div>
             </SytledPosterInnerDiv>
             <SytledPosterInnerImgDiv>
-                <StyledPosterInnerImg src="/assets/meta/poster-meta.png" data-aos="flip-up" data-aos-delay="650"/>
+                <StyledPosterInnerImg src={resultPosterState['image_url']} data-aos="flip-up" data-aos-delay="650"/>
             </SytledPosterInnerImgDiv>
             { downloadImage ?
             <div>
@@ -140,7 +147,7 @@ export default function PosterPageResult(){
                 <Button button_label={"Download"} onclick={onHandleDownload}/>
                 {/* <HoverButton button_label={"Download"}/> */}
             </StyleDownloadButton>
-            <PosterPageDesc/>
+            <PosterPageDesc resultPosterState={resultPosterState}/>
             <div id="scenescape-desc">
                 <PosterPageResultDesc
                     left_sentence={"SceneScape(씬스케이프)는 아카이브먼트의 방식으로 표현하는 자동 포스터 변환 프로그램입니다. 현 사이트에서 베타버전을 체험해보실 수 있습니다. 앞으로의 SceneScape는 직접 사진을 업로드하여 개개인의 추억이 담긴 포스터를 제작할 수 있도록 설계될 예정입니다.  다음 버전에 관심이 있다면 아래 하트를 눌러주세요."}
@@ -170,6 +177,8 @@ export default function PosterPageResult(){
             </StyleHomeButton>
             <Footer/>
             </DownloadOverlay>
+        </div>
+        : null
         </div>
     );
 }

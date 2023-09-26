@@ -7,6 +7,7 @@ const StyledPosterPageDesc = styled.div`
 
 const StyledDescItem = styled.div`
     width: 550px;
+
     padding-top: 86px;
     // position: absolute;
     // left: 50%;
@@ -35,11 +36,11 @@ export default function PosterPageDesc(){
             <StyledDescItem>
                 <StyledRgithItemComponent className="detail-right-component">
                     <div>DATE</div>
-                    <div>2023.00.00</div>
+                    <div>{resultPosterState['date']}</div>
                 </StyledRgithItemComponent>
                 <StyledRgithItemComponent className="detail-right-component">
                     <div>NAME</div>
-                    <div>입력한 이름 노출</div>
+                    <div>{resultPosterState['name']}</div>
                 </StyledRgithItemComponent>
                 <StyledRgithItemComponent className="detail-right-component">
                     <div>PLACE</div>

@@ -137,6 +137,11 @@ const GalleryCloseImg = styled.img`
     pointer-events: none; 
 `
 
+const GalleryAudioSpectrumImg = styled.img`
+    width: 80px;
+    height: 150px;
+`
+
 const GallerySrcollDownText = styled.div`
     position: absolute;
     top: 90%;
@@ -202,6 +207,33 @@ const StyleGalleryCanvasDiv = styled.div`
     // height: 100%;
 `
 
+const StyleScrollDownImg = styled.img`
+    width: 23px;
+    margin-top: 17px;
+`
+
+const StyleGalleryTitle = styled.div`
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    top: 10%;
+    color: #FFF;
+    font-family: Pretendard;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 150%;
+    letter-spacing: -0.192px;
+`
+
+const StyleGalleryCanvasDiv = styled.div`
+    // top: 50px;
+    position: relative;
+    // margin-top: 50px;
+    // overflow: hidden;
+    // height: 100%;
+`
+
 export default function GalleryPage(){
     const [galleryImage, setGelleryImage] = useRecoilState(GalleryPageImageAtom);
     const navigate = useNavigate();
@@ -212,7 +244,7 @@ export default function GalleryPage(){
     useEffect(() => {
         setGelleryImage(null);
       },[])
-
+  
     const handleClose = () =>{
         setGelleryImage(null);
     }
@@ -240,6 +272,7 @@ export default function GalleryPage(){
                 </GalleryAudioSpectrum>
                 <GallerySrcollDownText>
                     <div>PLEASE SCROLL DOWN</div>
+                    <StyleScrollDownImg src="/assets/icons/scroll_down.png"/>
                 </GallerySrcollDownText>
                 <GallerySrcollDownImgDiv>
                     <StyleScrollDownImg src="/assets/icons/scroll_down.svg"/>
