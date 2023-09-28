@@ -4,6 +4,7 @@ import gsap from 'gsap'
 import Plane from './Plane'
 import { useRecoilState } from 'recoil'
 import GalleryPageImageAtom from '../../../state/GalleryPageImageAtom'
+import { useAudioPlayer } from '../../AudioPlayer'
 
 const CarouselItem = ({
   index,
@@ -21,6 +22,7 @@ const CarouselItem = ({
   const timeoutID = useRef()
 
   const [galleryImage, setGelleryImage] = useRecoilState(GalleryPageImageAtom);
+  // const { playing, play, pause, setAudioSource, src, setLoop } = useAudioPlayer();
 
   // useEffect(() => {
   //   setGelleryImage(null);
@@ -61,6 +63,7 @@ const CarouselItem = ({
 
   const handleClose = (e) => {
     setGelleryImage(null);
+    // pause()
     e.stopPropagation()
     if (!isActive) return
     setActivePlane(null)

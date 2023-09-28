@@ -30,7 +30,7 @@ const StyledRgithItemComponent = styled.div`
     border-bottom: 1px solid;
 `;
 
-export default function PosterPageDesc(){
+export default function PosterPageDesc({resultPosterState}){
     return (
         <StyledPosterPageDesc id="poster-desc">
             <StyledDescItem>

@@ -2,15 +2,14 @@ import { styled } from "styled-components";
 import "./DetailPageDesc.css";
 import GalleryPageImageAtom from "../../state/GalleryPageImageAtom";
 import { useRecoilState } from "recoil";
+import { useAudioPlayer } from "../AudioPlayer";
 
 const StyledDetailPageDesc = styled.div`
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 
     background-color: #000000;
 
-    padding-right: 320px;
-    padding-left: 320px;
     padding-top: 78px;
     padding-bottom: 66px;
 
@@ -42,24 +41,24 @@ const StyledRgithItemComponent = styled.div`
 
 export default function DetailPageDesc(){
     const [galleryImage, setGelleryImage] = useRecoilState(GalleryPageImageAtom);
+    // const { playing, play, pause, setAudioSource, src, setLoop } = useAudioPlayer();
 
-    // let audio = new Audio(galleryImage['audio'])
-
-    // const start = () => {
-    //     audio.play()
+    // if (galleryImage){
+    //     pause()
     // }
 
     // if (galleryImage){
-    //     audio.play();
+    //     console.log(galleryImage)
+    //     setAudioSource(galleryImage['audio'])
+    //     console.log(playing)
+    //     play()
     // }
-    // else{
-    //     audio.pause();
-    // }
-
-
+    
+    
     return (
-        <StyledDetailPageDesc id="detail-desc">
+        <StyledDetailPageDesc>
             <audio src={galleryImage['audio']} autoPlay={true} loop={true}></audio>
+
             <StyledDescLeftItem>
                 {galleryImage['desc']}
             </StyledDescLeftItem>

@@ -33,12 +33,11 @@ const StyleArchivementIcon = styled.img`
     margin-bottom: 30px;
 `
 
-const StyleArchivementLogo = styled.img`
-    padding-top: 8px;
-    padding-bottom: 20px;
-    width: 275px;
-
-`
+// const StyleArchivementLogo = styled.img`
+//     padding-top: 8px;
+//     padding-bottom: 20px;
+//     width: 275px;
+// `
 
 const StyleArchivementLogo = styled.img`
     padding-bottom: 28px;

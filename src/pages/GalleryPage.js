@@ -137,11 +137,6 @@ const GalleryCloseImg = styled.img`
     pointer-events: none; 
 `
 
-const GalleryAudioSpectrumImg = styled.img`
-    width: 80px;
-    height: 150px;
-`
-
 const GallerySrcollDownText = styled.div`
     position: absolute;
     top: 90%;
@@ -199,32 +194,19 @@ const StyleGalleryTitle = styled.div`
     animation: ${galleryTitleAnimation} 3.5s 0.5s linear alternate forwards;
 `
 
-const StyleGalleryCanvasDiv = styled.div`
-    // top: 50px;
-    position: relative;
-    // margin-top: 50px;
-    // overflow: hidden;
-    // height: 100%;
-`
-
-const StyleScrollDownImg = styled.img`
-    width: 23px;
-    margin-top: 17px;
-`
-
-const StyleGalleryTitle = styled.div`
-    position: fixed;
-    left: 50%;
-    transform: translate(-50%, 50%);
-    top: 10%;
-    color: #FFF;
-    font-family: Pretendard;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 150%;
-    letter-spacing: -0.192px;
-`
+// const StyleGalleryTitle = styled.div`
+//     position: fixed;
+//     left: 50%;
+//     transform: translate(-50%, 50%);
+//     top: 10%;
+//     color: #FFF;
+//     font-family: Pretendard;
+//     font-size: 32px;
+//     font-style: normal;
+//     font-weight: 700;
+//     line-height: 150%;
+//     letter-spacing: -0.192px;
+// `
 
 const StyleGalleryCanvasDiv = styled.div`
     // top: 50px;
@@ -248,6 +230,9 @@ export default function GalleryPage(){
     const handleClose = () =>{
         setGelleryImage(null);
     }
+
+    console.log(galleryImage)
+
     return (
         <div id="gallery">
             <Header/>
@@ -262,8 +247,7 @@ export default function GalleryPage(){
             ?
             <div>
                 <GalleryCloseButton>
-                    <GalleryCloseImg src="/assets/icons/close.svg"
-                    />
+                    <GalleryCloseImg src="/assets/icons/close.svg"/>
                 </GalleryCloseButton>
                 <GalleryAudioSpectrum>
                     <GalleryAudioSpectrumImg src="/assets/gif/archivement_spectrum.gif"/>
@@ -272,7 +256,6 @@ export default function GalleryPage(){
                 </GalleryAudioSpectrum>
                 <GallerySrcollDownText>
                     <div>PLEASE SCROLL DOWN</div>
-                    <StyleScrollDownImg src="/assets/icons/scroll_down.png"/>
                 </GallerySrcollDownText>
                 <GallerySrcollDownImgDiv>
                     <StyleScrollDownImg src="/assets/icons/scroll_down.svg"/>

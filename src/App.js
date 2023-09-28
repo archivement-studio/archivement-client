@@ -9,6 +9,7 @@ import GalleryPage from './pages/GalleryPage';
 import DetailPage from './pages/DetailPage';
 import PosterPage from './pages/PosterPage';
 import React from 'react';
+import { AudioPlayerProvider } from './components/AudioPlayer';
 // import curDot from 'cursor-dot'
 
 // const cursor = curDot({
@@ -46,6 +47,7 @@ function App() {
   return (
     <React.Fragment>
       <Reset/>
+      <AudioPlayerProvider>
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<MainPage/>}/>
@@ -56,6 +58,7 @@ function App() {
           <Route path="/poster" element={<PosterPage/>}/>
         </Routes>
       </BrowserRouter>
+      </AudioPlayerProvider>
     </React.Fragment>
     
   );

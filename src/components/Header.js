@@ -3,6 +3,8 @@ import './Header.css'
 import { Link } from "react-router-dom";
 import { useRecoilState } from "recoil";
 import SoundStateAtom from "../state/SoundStateAtom";
+import GalleryPageImageAtom from "../state/GalleryPageImageAtom";
+import { AudioPlayer, AudioPlayerProvider, useAudioPlayer } from "./AudioPlayer";
 const archivementLogo = "/assets/images/archivement-logo.png";
 
 const StyledHeader = styled.div`
@@ -58,6 +60,12 @@ const StyleHeaderLogo = styled.img`
 
 export default function Header(){
     const [soundState,setSoundState] = useRecoilState(SoundStateAtom);
+    const [galleryImage, setGelleryImage] = useRecoilState(GalleryPageImageAtom);
+    // const { playing, play, pause, setAudioSource, src, setLoop } = useAudioPlayer();
+    // setLoop(true)
+
+    // console.log(playing)
+
 
     function onCLickSoundNav(){
         let soundStateTemp = { ...soundState };
@@ -65,15 +73,35 @@ export default function Header(){
         if (!soundStateTemp['sound_state']){
             let a = document.getElementById('sound');
             console.log(a);
+            // play()
+            // play()
+        }
+        else{
+            // pause()
         }
         setSoundState(soundStateTemp);
     }
 
+    // if (galleryImage){
+    //     console.log(galleryImage)
+    //     try{
+    //         setAudioSource(galleryImage['audio'])
+    //     }
+    //     catch(error){
+    //         console.log(error)
+    //     }
+    // }
+    
+
     return (
         <StyledHeader>
-            <StyleHeaderMenuLeftItem>
+            {/* <button onClick={playing ? pause : play}>{playing ? 'Pause' : 'Play'}</button> */}
+            {/* <audio src="/assets/audios/re_plus.mp3" autoPlay={true} loop={true}></audio> */}
+            {/* <AudioPlayer src="/assets/audios/re_plus.mp3" playing={true}/> */}
+            <StyleHeaderMenuLeftItem playing={true}>
                 <div id="home"><Link className="link" to="/">HOME</Link></div>
-                <div id="store"><a className="link" href="https://smartstore.naver.com/givven">STORE</a></div>
+                <div id="store"><Link className="link" to="/store">STORE</Link></div>
+                {/* <div id="store"><a className="link" href="https://smartstore.naver.com/codecolony">STORE</a></div> */}
             </StyleHeaderMenuLeftItem>
             <StyleHeaderMenuCenterItem>
                 <Link id="archivement-header-logo" to="/"><StyleHeaderLogo src={archivementLogo}/></Link>

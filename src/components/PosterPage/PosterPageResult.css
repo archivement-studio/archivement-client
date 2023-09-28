@@ -37,17 +37,17 @@
 }
 
 #download-img-div img{
-    width: 300px;
+    width: 350px;
     filter: none;
 }
 
 #download-img-div{
-    top: 250px
+    top: 186px
 }
 
 #download-title{
     position: absolute;
-    top: 68%;
+    top: 333px;
     text-align: center;
     transform: translate(-50%, 50%);
     left: 50%;
@@ -58,4 +58,12 @@
     line-height: 150%;
     letter-spacing: -0.168px;
     width: 341px;
+}
+
+.download-close-button{
+    width: 0px;
+}
+
+.download-close-button img{
+    width: 30px
 }
